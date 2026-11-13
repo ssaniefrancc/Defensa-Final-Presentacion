@@ -498,7 +498,7 @@ layout: none
 class: thesis-slide 
 title: 'INSTRUMENTOS DE RECOLECCIÓN DE DATOS'
 transition: slide-up
-clicks: 3
+clicks: 2
 ---
 
 <main class="frame">
@@ -506,8 +506,7 @@ clicks: 3
 <VerticalCarousel label="Instrumentos de recolección de datos" :items='[
   { "title": "Entrevista", "icon": "chat", "text": "Perspectiva de la propietaria." },
   { "title": "Encuesta inicial", "icon": "checklist", "text": "Dificultades y criterios cromáticos antes de usar el sistema." },
-  { "title": "Encuesta final", "icon": "completed", "text": "Percepciones de las clientas después de usar Chroma Sense." },
-  { "title": "Observación directa", "icon": "view", "text": "Registro de la interacción y el proceso de selección." }
+  { "title": "Encuesta final", "icon": "completed", "text": "Percepciones de las clientas después de usar Chroma Sense." }
 ]' />
 </main>
 
