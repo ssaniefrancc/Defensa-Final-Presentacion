@@ -1,0 +1,476 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/space-grotesk';
+
+:root {
+  color-scheme: dark;
+  --chroma-primary: #663af3;
+  --chroma-secondary: #98c0ef;
+  --midnight: color-mix(in srgb, var(--chroma-primary) 8%, #05060f);
+  --ice: #d8ecf8;
+  --body: #d1e4fa;
+  --muted: #c7d3ea;
+  --chroma-highlight: color-mix(in srgb, var(--chroma-secondary) 45%, #e3edff);
+  --wash: color-mix(in srgb, var(--chroma-primary) 8%, rgba(186,214,247,.03));
+  --line: color-mix(in srgb, var(--chroma-secondary) 25%, rgba(186,215,247,.12));
+  --skywash: linear-gradient(0deg, var(--chroma-highlight), var(--ice));
+  --display: 'Space Grotesk Variable', 'Segoe UI', sans-serif;
+  --sans: 'Inter Variable', 'Segoe UI', sans-serif;
+  --frost-edge: inset 0 1px 1px var(--line), inset 0 24px 48px var(--wash),
+    0 16px 32px rgba(0,0,0,.2);
+}
+
+.slidev-layout.thesis-slide, .thesis-slide {
+  position: relative;
+  isolation: isolate;
+  padding: 0;
+  color: var(--body);
+  font-family: var(--sans);
+  background: radial-gradient(ellipse at 50% -10%, color-mix(in srgb, var(--chroma-primary) 22%, transparent), transparent 58%),
+    var(--midnight);
+}
+
+.thesis-slide.hero-slide, .thesis-slide.chapter-slide {
+  background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--chroma-primary) 32%, transparent), transparent 65%),
+    var(--midnight);
+}
+
+.thesis-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: linear-gradient(to right, rgba(186,215,247,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(186,215,247,.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at 50% 25%, black, transparent 75%);
+}
+
+.thesis-slide .frame {
+  height: 720px;
+  padding: 66px 88px 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+  box-sizing: border-box;
+}
+
+.thesis-slide h1, .thesis-slide .wordmark {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--ice);
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+
+.thesis-slide .slide-title {
+  font-size: 49px;
+  background: var(--skywash);
+  background-clip: text;
+  color: transparent;
+  align-self: center;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.thesis-slide p { margin: 0; }
+.thesis-slide .lead { max-width: 900px; font-size: 31px; line-height: 1.34; color: var(--muted); }
+.thesis-slide .glass {
+  background: linear-gradient(150deg, color-mix(in srgb, var(--chroma-primary) 11%, #151925), #0a0c18 92%);
+  border-radius: 16px;
+  box-shadow: var(--frost-edge);
+  padding: 29px 32px;
+}
+
+.thesis-slide .gridcards { display: flex; flex-wrap: wrap; gap: 20px; }
+.thesis-slide .gridcards .glass { flex: 1 1 29%; }
+.thesis-slide .gridcards:has(> :nth-child(4)) .glass { flex-basis: 44%; }
+.thesis-slide .gridcards h3 { font-size: 24px; margin: 0 0 10px; color: var(--ice); font-weight: 500; }
+.thesis-slide .gridcards p { font-size: 22px; line-height: 1.46; color: var(--muted); }
+
+.thesis-slide .rationale-panel {
+  align-self: center;
+  max-width: 910px;
+  padding: 46px 60px;
+  text-align: center;
+}
+.thesis-slide .rationale-panel .rationale-main {
+  color: var(--ice);
+  font: 500 39px/1.24 var(--display);
+  text-wrap: balance;
+}
+.thesis-slide .rationale-panel p + p {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+.thesis-slide .scope-sheet {
+  align-self: center;
+  width: min(100%, 790px);
+  margin: 0;
+  padding: 12px 34px;
+}
+.thesis-slide .scope-sheet > div {
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  padding: 21px 0;
+}
+.thesis-slide .scope-sheet > div + div { border-top: 1px solid var(--line); }
+.thesis-slide .scope-sheet dt { color: var(--chroma-highlight); font-size: 20px; font-weight: 500; }
+.thesis-slide .scope-sheet dd { margin: 0; color: var(--ice); font-size: 25px; }
+
+.thesis-slide .impact-overview { align-self: center; width: min(100%, 960px); }
+.thesis-slide .impact-label {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 17px;
+  text-align: center;
+}
+.thesis-slide .impact-beneficiaries {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+.thesis-slide .impact-beneficiaries section { padding: 32px 36px; }
+.thesis-slide .impact-beneficiaries h2 {
+  margin: 0 0 12px;
+  color: var(--ice);
+  font: 500 30px/1.2 var(--display);
+}
+.thesis-slide .impact-beneficiaries p { color: var(--muted); font-size: 23px; line-height: 1.4; }
+
+.thesis-slide.tools-slide .frame { gap: 20px; }
+.thesis-slide .tools-category {
+  color: var(--muted);
+  font-size: 20px;
+  text-align: center;
+}
+.thesis-slide .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.thesis-slide .tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 14px;
+  text-align: center;
+}
+.thesis-slide .tool-logo {
+  width: 100px;
+  height: 64px;
+  padding: 7px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.thesis-slide .tool-logo-light { background: #e3edff; }
+.thesis-slide .tool-card h3 { margin: 0; color: var(--ice); font-size: 23px; line-height: 1.2; }
+.thesis-slide .tool-card p { color: var(--muted); font-size: 16px; line-height: 1.3; }
+
+.thesis-slide .statement { font-size: 33px; line-height: 1.43; max-width: 1030px; padding: 38px; text-align: center; align-self: center; }
+
+.thesis-slide.formula-slide .frame {
+  align-items: center;
+  gap: 20px;
+}
+
+.thesis-slide .formula-subtitle {
+  color: var(--muted);
+  font-size: 23px;
+  text-align: center;
+}
+
+.thesis-slide .formula-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-content: center;
+  gap: 22px;
+  width: min(100%, 960px);
+  min-height: 200px;
+  padding: 30px 34px;
+}
+
+.thesis-slide .formula-panel math {
+  display: block math;
+  margin: 0;
+  color: var(--ice);
+  font-family: math;
+  font-size: 56px;
+}
+
+.thesis-slide .formula-carousel .question-wheel { height: 330px; }
+.thesis-slide .formula-carousel .question-card.glass {
+  width: min(86%, 950px);
+  padding-inline: 34px;
+}
+.thesis-slide .formula-carousel math {
+  display: block math;
+  margin: 0;
+  color: var(--ice);
+  font-family: math;
+  font-size: 56px;
+}
+.thesis-slide .formula-carousel math.formula-long { font-size: 46px; }
+.thesis-slide .formula-carousel .question-card[aria-hidden="true"] math { visibility: hidden; }
+
+.thesis-slide .formula-caption {
+  max-width: 790px;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.45;
+  text-align: center;
+  text-wrap: balance;
+}
+.thesis-slide .rows { margin: 0; padding: 0 0 0 36px; max-width: 1030px; }
+.thesis-slide .rows li { font-size: 26px; line-height: 1.35; padding: 15px 0 15px 12px; border-bottom: 1px solid var(--line); }
+.thesis-slide .rows li::marker { color: #98c0ef; }
+
+.thesis-slide .verbatim-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.thesis-slide .verbatim-list li {
+  display: grid;
+  grid-template-columns: 94px 1fr;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.thesis-slide .verbatim-list strong { color: #b6d9fc; }
+
+.thesis-slide.survey-slide .frame { gap: 22px; }
+.thesis-slide .survey-question { color: var(--ice); font-size: 24px; line-height: 1.3; }
+
+.thesis-slide .hero, .thesis-slide .chapter { text-align: center; margin: auto; width: 100%; }
+.thesis-slide .eyebrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  color: var(--muted);
+  font: 15px/1.5 dotDigital, 'IBM Plex Mono', Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+.thesis-slide .eyebrow::before, .thesis-slide .eyebrow::after {
+  content: '';
+  width: 95px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(186,215,247,.45), transparent);
+}
+.thesis-slide .hero .wordmark {
+  font-size: 142px;
+  margin: 34px 0 25px;
+  background: var(--skywash);
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 32px color-mix(in srgb, var(--chroma-primary) 46%, transparent));
+}
+.thesis-slide .hero h1 { font-size: 25px; line-height: 1.38; letter-spacing: .005em; max-width: 820px; margin: auto; }
+.thesis-slide .cover-date { margin-top: 22px; color: var(--muted); font-size: 19px; }
+.thesis-slide .chapter h1 {
+  font-size: 69px;
+  max-width: 990px;
+  margin: 25px auto 0;
+  background: var(--skywash);
+  background-clip: text;
+  color: transparent;
+}
+.thesis-slide .chapter .lead { margin: 25px auto 0; }
+
+.thesis-slide .cover-spectrum { display: flex; justify-content: center; gap: 6px; margin-top: 38px; }
+.thesis-slide .cover-spectrum i { width: 27px; height: 9px; border-radius: 3px; background: var(--swatch); }
+.thesis-slide .cover-spectrum i:nth-child(1) { --swatch: #d8ecf8; }
+.thesis-slide .cover-spectrum i:nth-child(2) { --swatch: #b6d9fc; }
+.thesis-slide .cover-spectrum i:nth-child(3) { --swatch: #98c0ef; }
+.thesis-slide .cover-spectrum i:nth-child(4) { --swatch: #798ea5; }
+.thesis-slide .cover-spectrum i:nth-child(5) { --swatch: #536881; }
+.thesis-slide .cover-spectrum i:nth-child(6) { --swatch: #2f343e; }
+
+.thesis-slide.hero-slide .frame { position: relative; overflow: hidden; }
+.thesis-slide .cover-university {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  left: -56px;
+  bottom: -55px;
+  width: 246px;
+  height: 246px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+}
+.thesis-slide .cover-university img {
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+  /* Balance the logo within the visible portion of the cropped circle. */
+  transform: translate(15px, -15px);
+}
+
+.thesis-slide .split { display: grid; grid-template-columns: .8fr 1.2fr; align-items: stretch; gap: 20px; }
+.thesis-slide .metric { display: flex; flex-direction: column; justify-content: center; }
+.thesis-slide .metric strong { font-family: var(--display); font-size: 96px; font-weight: 500; line-height: 1; letter-spacing: -.065em; color: #b6d9fc; }
+.thesis-slide .metric p { margin-top: 18px; font-size: 24px; line-height: 1.34; }
+.thesis-slide .method dl { display: grid; grid-template-columns: 112px 1fr; gap: 14px; margin: 0; font-size: 21px; line-height: 1.3; }
+.thesis-slide .method dt { color: #9da7ba; }
+.thesis-slide .method dd { margin: 0; }
+.thesis-slide .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.thesis-slide .stat-grid .metric { padding: 22px 28px; }
+.thesis-slide .stat-grid strong { font-size: 65px; }
+.thesis-slide .stat-grid p { margin-top: 9px; font-size: 22px; }
+
+.thesis-slide.image-slide .frame { gap: 23px; padding-top: 52px; padding-bottom: 48px; }
+.thesis-slide .evidence {
+  margin: 0;
+  padding: 12px;
+  height: 504px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wash);
+  box-shadow: var(--frost-edge);
+}
+.thesis-slide .evidence img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
+
+.thesis-slide .cody-capture {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  gap: 11px;
+}
+
+.thesis-slide .cody-capture figcaption { color: var(--muted); font-size: 17px; }
+
+.thesis-slide .process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: process;
+}
+
+.thesis-slide .process-steps li {
+  position: relative;
+  padding: 22px 22px 22px 62px;
+  counter-increment: process;
+}
+
+.thesis-slide .process-steps li::before {
+  position: absolute;
+  top: 25px;
+  left: 22px;
+  content: counter(process, decimal-leading-zero);
+  color: #98c0ef;
+  font: 15px/1.3 Consolas, monospace;
+}
+
+.thesis-slide .process-steps h3,
+.thesis-slide .study-metrics h3 {
+  margin: 0 0 8px;
+  color: var(--ice);
+  font-size: 23px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.thesis-slide .process-steps p { color: var(--muted); font-size: 20px; line-height: 1.35; }
+.thesis-slide .study-context { color: var(--muted); font-size: 19px; }
+.thesis-slide .study-results { display: grid; gap: 20px; }
+.thesis-slide .study-metrics { display: flex; gap: 20px; }
+.thesis-slide .study-metrics .metric { flex: 1 1 0; justify-content: flex-start; }
+.thesis-slide .study-metrics .metric h3 { margin-top: 18px; }
+.thesis-slide .study-metrics .metric p { margin: 0; font-size: 22px; }
+
+.thesis-slide .budget .metric strong { font-size: 50px; white-space: nowrap; }
+.thesis-slide.budget-slide .frame { gap: 18px; }
+.thesis-slide .budget-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 20px;
+}
+.thesis-slide .budget-summary strong {
+  color: var(--chroma-highlight);
+  font: 500 42px/1.12 var(--display);
+}
+.thesis-slide .budget-table { padding: 12px 20px; }
+.thesis-slide .budget-table table { font-size: 16px; line-height: 1.25; }
+.thesis-slide .budget-table :is(th, td) { padding: 9px 12px; }
+.thesis-slide .budget-table tbody th { width: 29%; }
+.thesis-slide .budget-table td:last-child,
+.thesis-slide .budget-table th:last-child {
+  text-align: left;
+  white-space: normal;
+}
+.thesis-slide .budget-table td:last-child { color: var(--muted); }
+.thesis-slide .budget-table tbody tr:last-child th { border-bottom: 0; }
+.thesis-slide .budget-caption {
+  color: var(--muted);
+  font-size: 17px;
+  text-align: center;
+}
+.thesis-slide .table-card { padding: 17px 24px; }
+.thesis-slide table { width: 100%; border-collapse: collapse; font-size: 18px; font-variant-numeric: tabular-nums; }
+.thesis-slide th, .thesis-slide td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+.thesis-slide th { font-weight: 500; color: var(--ice); }
+.thesis-slide th:not(:first-child), .thesis-slide td:not(:first-child) { text-align: right; white-space: nowrap; }
+.thesis-slide tbody tr:last-child td { border-bottom: none; }
+
+
+.thesis-slide .live-demo-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 32px;
+  padding: 14px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(186,214,247,.07);
+  box-shadow: inset 0 1px 1px rgba(216,236,248,.2), inset 0 0 0 1px var(--line);
+  color: var(--ice);
+  font-size: 26px;
+  text-decoration: none;
+}
+
+.thesis-slide .live-demo-link:hover,
+.thesis-slide .live-demo-link:focus-visible {
+  background: rgba(186,214,247,.15);
+  box-shadow: inset 0 1px 1px rgba(216,236,248,.28), inset 0 0 0 1px var(--line),
+    0 0 22px color-mix(in srgb, var(--chroma-primary) 35%, transparent);
+}
+
+.thesis-slide .live-demo-link:focus-visible {
+  outline: 2px solid #98c0ef;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .thesis-slide .live-demo-link {
+    transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .thesis-slide .live-demo-link:is(:hover, :focus-visible) {
+    transform: translateY(-3px);
+  }
+
+}
