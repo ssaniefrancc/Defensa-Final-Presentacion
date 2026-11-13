@@ -713,14 +713,23 @@ title: 'CONCLUSIONES'
 transition: slide-left
 ---
 
-<main class="frame">
+<SlideFrame>
 <h1 class="slide-title">CONCLUSIONES</h1>
-<AnimatedTextCards :items='[
-  { "title": "Problema", "text": "Las clientas describieron dudas, desconocimiento cromático e indecisión." },
-  { "title": "Solución", "text": "Chroma Sense orienta la elección de colores mediante recomendaciones personalizadas." },
-  { "title": "Valoración", "text": "Las clientas percibieron mayor seguridad y menos indecisión." }
-]' />
-</main>
+<div class="conclusion-2x2">
+  <div class="glass" style="--card-order:0">
+    <h3>Problema identificado</h3>
+    <CardText text="Se identificaron dificultades relacionadas con la inseguridad cromática, el desconocimiento y la dependencia del vendedor." :card-order="0" />
+  </div>
+  <div class="glass" style="--card-order:1">
+    <h3>Solución desarrollada</h3>
+    <CardText text="Chroma Sense integra visión por computadora e inteligencia artificial para generar recomendaciones cromáticas personalizadas." :card-order="1" />
+  </div>
+  <DiscussionDashboard :metrics='[
+    { "value": 86, "stage": "Resultados obtenidos", "description": "Percibió menor tiempo de indecisión." },
+    { "value": 80, "stage": "Resultados obtenidos", "description": "Manifestó mayor seguridad al elegir prendas." }
+  ]' />
+</div>
+</SlideFrame>
 
 ---
 layout: none
@@ -729,14 +738,27 @@ title: 'RECOMENDACIONES'
 transition: slide-down
 ---
 
-<main class="frame">
+<SlideFrame>
 <h1 class="slide-title">RECOMENDACIONES</h1>
-<AnimatedTextCards :items='[
-  { "title": "Integración", "text": "Conectar con inventario y sistemas de punto de venta." },
-  { "title": "Ampliación", "text": "Explorar morfología corporal y otros criterios de estilo." },
-  { "title": "Evaluación", "text": "Estudiar el impacto en otros establecimientos." }
-]' />
-</main>
+<div class="conclusion-2x2">
+  <div class="glass" style="--card-order:0">
+    <IconCard icon="store" title="Adopción tecnológica" />
+    <CardText text="Promover el uso de sistemas de asesoramiento con IA en boutiques y comercios de vestimenta." :card-order="0" />
+  </div>
+  <div class="glass" style="--card-order:1">
+    <IconCard icon="cloud" title="Modelo SaaS" />
+    <CardText text="Evaluar la adaptación de Chroma Sense a un servicio por suscripción para múltiples establecimientos." :card-order="1" />
+  </div>
+  <div class="glass" style="--card-order:2">
+    <IconCard icon="people" title="Perfiles de vendedores" />
+    <CardText text="Incorporar perfiles individuales y mecanismos de retroalimentación para mejorar el asesoramiento." :card-order="2" />
+  </div>
+  <div class="glass" style="--card-order:3">
+    <IconCard icon="wifioff" title="Menor dependencia de internet" />
+    <CardText text="Explorar Edge Computing para habilitar funciones locales o híbridas." :card-order="3" />
+  </div>
+</div>
+</SlideFrame>
 
 ---
 layout: none

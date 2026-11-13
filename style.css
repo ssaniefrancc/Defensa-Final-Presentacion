@@ -90,6 +90,25 @@
 .thesis-slide .gridcards h3 { font-size: 24px; margin: 0 0 10px; color: var(--ice); font-weight: 500; }
 .thesis-slide .gridcards p { font-size: 22px; line-height: 1.46; color: var(--muted); }
 
+/* Conclusiones — grid 2×2: texto arriba, métricas abajo */
+.thesis-slide .conclusion-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+.thesis-slide .conclusion-2x2 .glass {
+  padding: 24px 28px;
+}
+.thesis-slide .conclusion-2x2 h3 { font-size: 22px; margin: 0 0 10px; color: var(--ice); font-weight: 500; }
+.thesis-slide .conclusion-2x2 p  { font-size: 20px; line-height: 1.46; color: var(--muted); margin: 0; }
+.thesis-slide .conclusion-2x2 .discussion-dashboard {
+  grid-column: 1 / -1;
+}
+.thesis-slide .conclusion-2x2 .discussion-metrics {
+  grid-template-columns: 1fr 1fr;
+}
+
 .thesis-slide .rationale-panel {
   align-self: center;
   max-width: 910px;
